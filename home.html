@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+To make things work we will need JavaScript to store variables and access key information. 
+Rather than creating a web app to display information that is only text, I will instead
+output to this html script to simplify output. For use on other devices, must request that
+the user provide the location of the directory, or require standard install to C:/ProgramFiles...
+-->
+<head>
+	<title>Random Meal Plan Tool</title>
+	<link rel="stylesheet" href="C:\Users\Travis\OneDrive - Western Kentucky University\Desktop\Projects\MealPlanningApp\MealPlan_v0_1_0\library\html\style.css" type="text/css">
+	<script type = "text/javascript" src = "C:\Users\Travis\OneDrive - Western Kentucky University\Desktop\Projects\MealPlanningApp\MealPlan_v0_1_0\scripts\planner.js"></script>
+	<script type = "text/javascript" src = "C:\Users\Travis\OneDrive - Western Kentucky University\Desktop\Projects\MealPlanningApp\MealPlan_v0_1_0\scripts\handler.js"></script>
+</head>
+<body>
+<h1>Random Meal Plan Tool</h1>
+<div class="mainMenu" id="homeDIV">
+<h2>What do you need to create?</h2>
+<button class="center" id="singleMealButton" type="button" onclick="load('single', 'y')">One Meal</button>
+<button class="center" id="listButton" type="button" onclick="load('shoppingList', 'y')">Shopping List</button>
+<button class="center" id="placeButton" type="button" onclick="load('place', 'y')">Restuarant Ideas</button>
+</div>
+<div id="listDIV" class="workArea">
+	<h2>Today's Meal:</h2>
+	<div class="center"><button id="generateMeal" type="button" onclick="generateMeal()">Generate Meal!</button></div>
+	<table class="mainTable">
+		<tr>
+			<th>Day</th>
+			<th>Protein</th>
+			<th>Veggie</th>
+			<th>Carbs</th>
+		</tr>
+		<tr>
+			<th>Monday</th>
+			<td id = "proteinCell1"></td>
+			<td id = "veggieCell1"></td>
+			<td id = "carbCell1"></td>
+		</tr>
+		<tr>
+			<th>Tuesday</th>
+			<td id = "proteinCell2"></td>
+			<td id = "veggieCell2"></td>
+			<td id = "carbCell2"></td>
+		</tr>
+		<tr>
+			<th>Wednesday</th>
+			<td id = "proteinCell3"></td>
+			<td id = "veggieCell3"></td>
+			<td id = "carbCell3"></td>
+		</tr>
+		<tr>
+			<th>Thursday</th>
+			<td id = "proteinCell4"></td>
+			<td id = "veggieCell4"></td>
+			<td id = "carbCell4"></td>
+		</tr>
+		<tr>
+			<th>Friday</th>
+			<td id = "proteinCell5"></td>
+			<td id = "veggieCell5"></td>
+			<td id = "carbCell5"></td>
+		</tr>
+		<tr>
+			<th>Saturday</th>
+			<td id = "proteinCell6"></td>
+			<td id = "veggieCell6"></td>
+			<td id = "carbCell6"></td>
+		</tr>
+		<tr>
+			<th>Sunday</th>
+			<td id = "proteinCell7"></td>
+			<td id = "veggieCell7"></td>
+			<td id = "carbCell7"></td>
+		</tr>
+	</table>
+</div>
+<div id="singleDIV" class="workArea">
+	<h2>Need other ideas? How about some dishes that count as a whole meal?</h2>
+	<div class="center"><button id="generateDish" type="button" onclick="generateDish()">Generate Dish!</button></div>
+	<table>
+		<tr>
+			<th>Dish</th>
+		</tr>
+		<tr>
+			<td id = "dishCell"></td>
+		</tr>
+	</table>
+</div>
+<div id="placeDIV" class="workArea">
+	<h2>Wanna go out somewhere? Here is a restuarant idea:</h2>
+	<div class="center"	><button id="generatePlace" type="button" onclick="generatePlace()">Generate Restuarant!</button></div>
+	<table>
+		<tr>
+			<th>Place</th>
+		</tr>
+		<tr>
+			<td id = "placeCell"></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

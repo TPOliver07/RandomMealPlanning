@@ -1,0 +1,9 @@
+This version utilizes multiple pages to simplify display of information. In addition, preferences are now created
+and stored for individual users locally using XML files generated based on inputted user data. With preferences
+comes profiles, so users will be asked to create (right now basic) profile information.
+ - How can these be stored in a webpage that uses Google Sites? What is Google Sites cookie functionality. 
+
+Preferences are handled by the handler.js script. plannerApplet.js still contains the same functions, but will now
+be accessed from different HTML pages, and has been renamed to planner.js.
+
+Improvements to style can be made as well.
