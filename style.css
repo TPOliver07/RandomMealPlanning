@@ -29,7 +29,14 @@ h1, h2 {
 	font-family: arial;
 	text-align: center;
 	}
-	
+
+p {
+	font-family:arial;
+	text-align: left;
+	font-size: 14px;
+	color: black;
+}
+
 button {
 	background-color: #e7e7e7;
 	border: 2px solid #000000;
@@ -69,4 +76,11 @@ body {
 
 .workArea {
 	display: none;
+}
+
+.pref {
+	height: 40px;
+	size: 500;
+	font-family: arial;
+	font-size: 14px;
 }
