@@ -30,4 +30,5 @@ function load(type, home) {
 		document.getElementById("listDIV").style.display = "none";
 		document.getElementById("placeDIV").style.display = "none";
 		home = "n"
+	}
 }
