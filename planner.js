@@ -3,6 +3,7 @@
 
 var webDisplay = "index.html"
 
+
 var proteinList = new Array("Shrimp","Tofu","Tempeh","Seitan","Mahi Mahi","Chickpeas","Impossible Meat","Veggie Burger", "Variety Fish");
 var veggieList = new Array("Squash","Broccoli","Spinach","Asparagus","Green Beans","Carrots","Cauliflower","Avacado","Corn","Cabbage","Sweet Potato","Snap Peas");
 var carbList = new Array("Pasta","Rice","Potatoes","Mac and Cheese","Bread","Tacos");
@@ -24,7 +25,20 @@ if (!document.cookie) {
 	document.cookie = "placeList = "+ placeList.toString()+ ";Max-Age=2592000000;path=/";
 	
 } else {
+	cookieList = document.cookie.split(";");
+	console.log(cookieList);
+	for (let i = 0; i < cookieList.length; i++) {
+		cookieList[i] = cookieList[i].split("=")[1];
+	}
+	console.log(cookieList);
 	
+	var proteinList = cookieList[0].split(",");
+	var veggieList = cookieList[1].split(",");
+	var carbList = cookieList[2].split(",");
+	var dishList = cookieList[3].split(",");
+	var placeList = cookieList[4].split(",");
+	
+	console.log(proteinList + ";" + veggieList + ";" + carbList + ";" + dishList + ";" + placeList);
 }
 
 var protein = "";
@@ -130,9 +144,9 @@ function savePreferences(){
 	
 	// save to cookies.
 	
-	document.cookie = "proteinList = "+ proteinList.toString()+ ";Max-Age=2592000000;path=/;";
-	document.cookie = "veggieList = "+ veggieList.toString()+ ";Max-Age=2592000000;path=/";
-	document.cookie = "carbList = "+ carbList.toString()+ ";Max-Age=2592000000;path=/";
-	document.cookie = "dishList = "+ dishList.toString()+ ";Max-Age=2592000000;path=/";
-	document.cookie = "placeList = "+ placeList.toString()+ ";Max-Age=2592000000;path=/";
+	document.cookie = "proteinList = "+ proteinList.toString()+ ";Max-Age=220924800;path=/;SameSite=strict;";
+	document.cookie = "veggieList = "+ veggieList.toString()+ ";Max-Age=220924800;path=/;SameSite=strict;";
+	document.cookie = "carbList = "+ carbList.toString()+ ";Max-Age=220924800;path=/;SameSite=strict;";
+	document.cookie = "dishList = "+ dishList.toString()+ ";Max-Age=220924800;path=/;SameSite=strict;";
+	document.cookie = "placeList = "+ placeList.toString()+ ";Max-Age=220924800;path=/;SameSite=strict;";
 }
