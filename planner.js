@@ -1,14 +1,31 @@
 // This script will contain all of the important JavaScript workings that make this program run. 
 // Define various arrays that will allow program and user to add and access certain details.
 
-var webDisplay = "C:\Users\Travis\Desktop\Projects\MealPlanningApp\MealPlanWeeklong\webDisplay.html"
+var webDisplay = "index.html"
 
-const proteinList = ["Shrimp","Tofu","Tempeh","Seitan","Mahi Mahi","Chickpeas","Impossible Meat","Veggie Burger", "Variety Fish"];
-const veggieList = ["Squash","Broccoli","Spinach","Asparagus","Green Beans","Carrots","Cauliflower","Avacado","Corn","Cabbage","Sweet Potato","Snap Peas"];
-const carbList = ["Pasta","Rice","Potatoes","Mac and Cheese","Bread","Tacos"];
-const dishList = ["Sphagetti", "Tortilla", "Paella", "Lasagna","Soup"];
-const placeList = ["K&L", "Ichiban", "Lisa's Fifth Street Diner", "Que Pasa Tacos", "Panda Express", "Blaze Pizza", "Subway"]
+var proteinList = new Array("Shrimp","Tofu","Tempeh","Seitan","Mahi Mahi","Chickpeas","Impossible Meat","Veggie Burger", "Variety Fish");
+var veggieList = new Array("Squash","Broccoli","Spinach","Asparagus","Green Beans","Carrots","Cauliflower","Avacado","Corn","Cabbage","Sweet Potato","Snap Peas");
+var carbList = new Array("Pasta","Rice","Potatoes","Mac and Cheese","Bread","Tacos");
+var dishList = new Array("Sphagetti", "Tortilla", "Paella", "Lasagna","Soup");
+var placeList = new Array("K&L", "Ichiban", "Lisa's Fifth Street Diner", "Que Pasa Tacos", "Panda Express", "Blaze Pizza", "Subway");
 // Need to get a list of all these things.
+console.log(document.cookie);
+if (!document.cookie) {
+	var proteinList = new Array("Shrimp","Tofu","Tempeh","Seitan","Mahi Mahi","Chickpeas","Impossible Meat","Veggie Burger", "Variety Fish");
+	var veggieList = new Array("Squash","Broccoli","Spinach","Asparagus","Green Beans","Carrots","Cauliflower","Avacado","Corn","Cabbage","Sweet Potato","Snap Peas");
+	var carbList = new Array("Pasta","Rice","Potatoes","Mac and Cheese","Bread","Tacos");
+	var dishList = new Array("Sphagetti", "Tortilla", "Paella", "Lasagna","Soup");
+	var placeList = new Array("K&L", "Ichiban", "Lisa's Fifth Street Diner", "Que Pasa Tacos", "Panda Express", "Blaze Pizza", "Subway");
+	console.log("Defined cookies");
+	document.cookie = "proteinList = "+ proteinList.toString()+ ";Max-Age=2592000000;path=/;";
+	document.cookie = "veggieList = "+ veggieList.toString()+ ";Max-Age=2592000000;path=/";
+	document.cookie = "carbList = "+ carbList.toString()+ ";Max-Age=2592000000;path=/";
+	document.cookie = "dishList = "+ dishList.toString()+ ";Max-Age=2592000000;path=/";
+	document.cookie = "placeList = "+ placeList.toString()+ ";Max-Age=2592000000;path=/";
+	
+} else {
+	
+}
 
 var protein = "";
 var veggie = "";
@@ -91,4 +108,31 @@ function outputLog() {
 	document.write("plannerApplet.js is running properly");
 	
 	// This function just exists to check on things.
+}
+
+function showPreferences(){ // This function places the user's existing preferences into the settings menu.
+	console.log("Preferences loaded");
+	document.getElementById('proteinPref').value = proteinList.toString();
+	document.getElementById('veggiePref').value = veggieList.toString();
+	document.getElementById('carbPref').value = carbList.toString();
+	document.getElementById('dishPref').value = dishList.toString();
+	document.getElementById('restuarantPref').value = placeList.toString();
+	
+	console.log(document.cookie);
+}
+
+function savePreferences(){
+	proteinList = document.getElementById('proteinPref').value.split(",");
+	veggieList = document.getElementById('veggiePref').value.split(",");
+	carbList = document.getElementById('carbPref').value.split(",");
+	dishList = document.getElementById('dishPref').value.split(",");
+	placeList = document.getElementById('restuarantPref').value.split(",");
+	
+	// save to cookies.
+	
+	document.cookie = "proteinList = "+ proteinList.toString()+ ";Max-Age=2592000000;path=/;";
+	document.cookie = "veggieList = "+ veggieList.toString()+ ";Max-Age=2592000000;path=/";
+	document.cookie = "carbList = "+ carbList.toString()+ ";Max-Age=2592000000;path=/";
+	document.cookie = "dishList = "+ dishList.toString()+ ";Max-Age=2592000000;path=/";
+	document.cookie = "placeList = "+ placeList.toString()+ ";Max-Age=2592000000;path=/";
 }

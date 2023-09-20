@@ -9,7 +9,7 @@ the user provide the location of the directory, or require standard install to C
 -->
 <head>
 	<title>Random Meal Plan Tool</title>
-	<!-- References happen here --!>
+	<!-- References happen here -->
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<script type = "text/javascript" src = "planner.js"></script>
 	<script type = "text/javascript" src = "handler.js"></script>
@@ -21,7 +21,7 @@ the user provide the location of the directory, or require standard install to C
 <button class="center" id="singleMealButton" type="button" onclick="load('single', 'y')">One Meal</button>
 <button class="center" id="listButton" type="button" onclick="load('shoppingList', 'y')">Shopping List</button>
 <button class="center" id="placeButton" type="button" onclick="load('place', 'y')">Restuarant Ideas</button>
-<button class="center" id="prefButton" type="button" onclick="load('pref', 'y')">Preferences</button>
+<button class="center" id="prefButton" type="button" onclick="load('pref', 'y'); showPreferences();">Preferences</button>
 </div>
 <div id="listDIV" class="workArea">
 	<h2>Today's Meal:</h2>
@@ -107,26 +107,26 @@ the user provide the location of the directory, or require standard install to C
 	Your prefences inform the script of what to include when making selections for you. 
 	Some handy presets are already included, but can be removed.</p>
 	<p>When finished making your changes, push the save button.<b>This will create a cookie in your browser so that your preferences are here when you come back!</b></p>
-	<!-- Need fields for the meal plan generator (Protein, veggie, carbs), dishes, and restuarants.--!>
+	<!-- Need fields for the meal plan generator (Protein, veggie, carbs), dishes, and restuarants.-->
 	<p>Format your list with comma's seperating each item. For example:<br>Eggs, Turkey, Bacon, Sausage</p>
 
 	<h3>Meal Plan Generator</h3>
-	<label for="proteinPref">Proteins:</label>
-  	<input class="pref" type="text" id="proteinPref" name="proteinPref"><br><br>
-	<label for="veggiePref">Proteins:</label>
-  	<input class="pref" type="text" id="veggiePref" name="veggiePref"><br><br>
-	<label for="carbPref">Proteins:</label>
-  	<input class="pref" type="text" id="carbPref" name="carbPref"><br><br>
+	<label for="proteinPref">Proteins:</label><br>
+  	<textarea class="pref" type="text" id="proteinPref" name="proteinPref"></textarea><br><br>
+	<label for="veggiePref">Veggies:</label><br>
+  	<textarea class="pref" type="text" id="veggiePref" name="veggiePref"></textarea><br><br>
+	<label for="carbPref">Carbs:</label><br>
+  	<textarea class="pref" type="text" id="carbPref" name="carbPref"></textarea><br><br>
 
 	<h3>Dish Generator</h3>
-	<label for="dishPref">Proteins:</label>
-  	<input class="pref" type="text" id="dishPref" name="dishPref"><br><br>
+	<label for="dishPref">Dishes:</label><br>
+  	<textarea class="pref" type="text" id="dishPref" name="dishPref"></textarea><br><br>
 
 	<h3>Restuarant Generator</h3>
-	<label for="restuarantPref">Proteins:</label>
-  	<input class="pref" type="text" id="restuarantPref" name="restuarantPref"><br><br>
+	<label for="restuarantPref">Restuarants:</label><br>
+  	<textarea	 class="pref" type="text" id="restuarantPref" name="restuarantPref"></textarea><br><br>
 
-	<button id="prefSave" onclick="savePref()">Save Preferences</button>
+	<button id="prefSave" onclick="savePreferences()">Save Preferences</button>
 </div>
 </body>
 </html>
